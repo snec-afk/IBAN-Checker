@@ -39,8 +39,8 @@ class IBAN_Check:
         if len(iban_string) == 20:    # Check if the number is at least 20 char long
             correct_value = '\nThe number is correct'
             self.my_stuff.insert(END, correct_value)    #Pass the output into the textbox
-            with open('IBAN_valid.csv', mode='a') as employee_file:     #Write to CSV file
-                bank_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            with open('IBAN_valid.csv', mode='a') as iban_file:     #Write to CSV file
+                bank_writer = csv.writer(iban_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 bank_writer.writerow([f'{iban_string}' + correct_value])
 
             if iban_string[4:8] == seb_group[0:4]:      #Check if the code belongs to SEB bank group
