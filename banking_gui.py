@@ -61,8 +61,8 @@ class IBAN_Check:
         elif len(iban_string) != 20:
             incorrect_value = '\nThe number is incorrect'
             self.my_stuff.insert(END, incorrect_value)
-            with open('IBAN_valid.csv', mode='a') as employee_file:
-                bank_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            with open('IBAN_valid.csv', mode='a') as iban_file:
+                bank_writer = csv.writer(iban_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 bank_writer.writerow([f'{iban_string}' + incorrect_value])
 
     #Open a text file
